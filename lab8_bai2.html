@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" ng-controller="productCtrl">
+        <div ng-include="'views/exercise1/header.html'"></div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home"><span class="glyphicon glyphicon-home"></span> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><span class="glyphicon glyphicon-th-list"></span> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><span class="glyphicon glyphicon-earphone"></span> Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#feedback"><span class="glyphicon glyphicon-envelope"></span> Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user"></span> Tài khoản
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#forgotpassword">Quên mật khẩu</a>
+                            <a class="dropdown-item" href="#accountregister">Đăng ký thành viên</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#updateprofile">Cập nhật hồ sơ</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#recentorders">Đơn hàng</a>
+                            <a class="dropdown-item" href="#pastorders">Hàng đã mua</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <hr>
+        <div ng-include="'views/exercise1/nav.html'"></div>
+        <hr>
+        <article class="row">
+            <div class="col">
+                <div ng-show="loading" class="pull-right badge badge-info">Loading...</div>
+                <ng-view></ng-view>
+                <div>
+                    <a href="#category/mobile">Điện thoại di động</a>
+                    <a href="#category/laptop">Máy tính xách tay</a>
+                    <a href="#category/laptop">Máy tính để bàn</a>
+                    <a href="#category/mobile">Quạt máy</a>
+                    <a href="#category/mobile">Tivi</a>
+                    <a href="#category/mobile">Tủ lạnh</a>
+                </div>
+                <div class="list-group mt-3">
+                    <a href="#supplier/apple" class="list-group-item">Apple</a>
+                    <a href="#supplier/samsung" class="list-group-item">Samsung</a>
+                    <a href="#supplier/nokia" class="list-group-item">Nokia</a>
+                    <a href="#supplier/lg" class="list-group-item">LG</a>
+                    <a href="#supplier/sony" class="list-group-item">Sony Ericsson</a>
+                    <a href="#supplier/dell" class="list-group-item">Dell</a>
+                    <a href="#supplier/acer" class="list-group-item">Acer</a>
+                    <a href="#supplier/hp" class="list-group-item">HP</a>
+                    <a href="#supplier/toshiba" class="list-group-item">Toshiba</a>
+                </div>
+                <div>
+                    <a href="#special/best" class="list-group-item">Hàng bán chạy</a>
+                    <a href="special/latest" class="list-group-item">Hàng mới</a>
+                    <a href="special/best" class="list-group-item">Hàng giảm giá</a>
+                    <a href="#special/best" class="list-group-item">Hãng đặc biệt</a>
+                    <a href="#special/best" class="list-group-item">Hàng xem nhiều</a>
+                </div>
+            </div>
+        </article>        
+        <div ng-include="'views/exercise1/footer.html'"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="/lab/lab8/js/layout.js"></script> 
+    <script src="/lab/lab8/js/Category-ctrl.js"></script> 
+    <script src="/lab/lab8/js/Special-ctrl.js"></script> 
+    <script src="/lab/lab8/js/Supplier-ctrl.js"></script>
+</body>
+</html>
